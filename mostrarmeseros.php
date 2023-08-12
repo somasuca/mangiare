@@ -1,10 +1,4 @@
-<?php
-include 'conexion.php';
-$consult   = "SELECT * FROM meseros";
-$resultado =mysqli_query($conect, $consult);
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,6 +102,10 @@ $resultado =mysqli_query($conect, $consult);
 
 <div class="container">
 <div style="table-responsive">
+<form action="" method="GET">
+          <input type="text" class="form-control" name="textobuscar" id="" placeholder="quesitojuli">
+          <button type="submit" class="btn btn-success" name="btn" >buscar</button>
+  </form>
 
 
   <table style="table table-primary">
@@ -121,6 +119,14 @@ $resultado =mysqli_query($conect, $consult);
     </tr>
     </thead>
      <?php
+     if (isset($_GET['textobuscar'])) {  
+      $buscar=$_GET['textobuscar'];
+    
+      $buscar="%$buscar%";
+      include 'conexion.php';
+$consult   = "SELECT * FROM meseros WHERE nombre LIKE '$buscar' or codigo LIKE '$buscar' or identificacion LIKE '$buscar'";
+$resultado =mysqli_query($conect, $consult);
+
   
 while($vec=mysqli_fetch_array($resultado)){ ?>
 <tbody>
@@ -133,7 +139,8 @@ while($vec=mysqli_fetch_array($resultado)){ ?>
   </tr>
 </tbody>
 
-<?php } ?>
+<?php }
+} ?>
 
   </table>
  </div>

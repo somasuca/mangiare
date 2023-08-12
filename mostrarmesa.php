@@ -1,10 +1,4 @@
-<?php
-include 'conexion.php';
-$consult   = "SELECT * FROM mesas";
-$resultado =mysqli_query($conect, $consult);
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,44 +14,7 @@ $resultado =mysqli_query($conect, $consult);
       td{
         width: 281px;
       } */
-      /* .n{
-      border: 0px solid;
-      font-size: 26px;
-      }
-      input{
-        width: 180px;
-        height: 35px;
-        border-radius: 10px;
-        border: 0.2px solid;
-      }
-      button{
-        width: 60px ;
-        background: white;
-        color: black;
-        height: 35px;
-        border-radius: 10px;
-        border: 0.2px solid;
-      }
-      button:hover{
-        background: black;
-        color: white;
-      }
-      .m{
-        background: black;
-        color:white;
-      }
-      a{
-        color: black;
-      }
-      a:hover{
-        color: green;
-      }
-      .elim{
-        color: black;
-      }
-      .elim:hover{
-        color: red;
-      } */
+     
       img{
           width: 100%;
           border-top-left-radius: calc(0.25rem - 1px);
@@ -71,10 +28,11 @@ $resultado =mysqli_query($conect, $consult);
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 <body>
+  
 <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
         <a class="navbar-brand" href="">
           <img src="https://cdn-icons-png.flaticon.com/512/1980/1980788.png" alt="" class="m">   MANGIARE</a> 
@@ -111,7 +69,10 @@ $resultado =mysqli_query($conect, $consult);
 
 <div class="container">
 <div style="table-responsive">
-
+  <form action="" method="GET">
+          <input type="text" class="form-control" name="textobuscar" id="" placeholder="quesitojuli">
+          <button type="submit" class="btn btn-success" name="btn" >buscar</button>
+  </form>
 
   <table style="table table-primary">
     <thead>
@@ -124,7 +85,19 @@ $resultado =mysqli_query($conect, $consult);
     </tr>
     </thead>
      <?php
-  
+
+if (isset($_GET['textobuscar'])) {  
+  $buscar=$_GET['textobuscar'];
+
+  $buscar="%$buscar%";
+
+  include 'conexion.php';
+  $consult   = "SELECT * FROM mesas WHERE estado LIKE '$buscar'";
+  $resultado =mysqli_query($conect, $consult);
+
+     
+
+
 while($vec=mysqli_fetch_array($resultado)){ ?>
 <tbody>
   <tr>
@@ -137,7 +110,8 @@ while($vec=mysqli_fetch_array($resultado)){ ?>
   </tr>
 </tbody>
 
-<?php } ?>
+<?php      }
+} ?>
 
   </table>
  </div>
