@@ -108,7 +108,7 @@ while($vec=mysqli_fetch_array($resultado)){ ?>
      ?>
 
     
-   <a href="../luis2.html"  ><img src="../imagenes/descargas.png" ></a>
+   <a href="../index.html"  ><img src="../imagenes/descargas.png" ></a>
 
 
     <script src="menu.js"></script>
