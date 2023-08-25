@@ -10,82 +10,82 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-        .cover{
-            height: 400px ;
-            background-image: url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-            background-position: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-blend-mode: darken ;
-        }
-        .m{
-           height:5%;
-           width: 5%;
-        }
-        h1{
-          color: white;
-        }
-        .card{
-          display: inline-block;
-        }
-        .centrar{
-          height: 84vh;
-          justify-content: space-evenly;
-        }
-        img{
-          width: 100%;
-          border-top-left-radius: calc(0.25rem - 1px);
-          border-top-right-radius: calc(0.25rem - 1px);
-          height: 76%;
-          display: flex;
-        }
-
+      /* Estilos para la barra de navegación */
+      .navbar {
+        background-color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .navbar-brand img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    
+      .navbar-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+    
+      .navbar-links li {
+        margin-right: 20px;
+      }
+    
+      .navbar-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease-in-out;
+      }
+    
+      .navbar-links a:hover {
+        background-color: #f8b400; /* Cambio de color de fondo al pasar el mouse */
+        color: #333; /* Cambio de color del texto al pasar el mouse */
+        border-radius: 5px; /* Bordes redondeados en el fondo resaltado */
+      }
     </style>
+    
+    
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-        <a class="navbar-brand" href="">
-          <img src="https://cdn-icons-png.flaticon.com/512/1980/1980788.png" alt="" class="m">   MANGIARE</a> 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-
-
-              <li class="nav-item">
-                <a class="nav-link" href="mostrarmeseros.php">Mostrar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buscarr.php">Buscar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buscarrpedido.php">buscar p</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="formulario.html">Meseros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="formulariomesa.html">Formulario Mesas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mostrarmesa.php"> Mesas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="formulariopedidos.html"> formulario pedidos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mostrarpedidos.php"> mostrar pedidos</a>
-              </li>
-            </ul>
-            <!-- <span class="navbar-text">
-              Navbar text with an inline element
-            </span> -->
-          </div>
-        </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn-icons-png.flaticon.com/512/1980/1980788.png" alt="" class="m"> MANGIARE
+    </a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="mostrarpedidos.php">Pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mostrarmeseros.php">Meseros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mostrarmesa.php">Mesas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <div class="cover d-flex d-flex justify-content-center d-flex align-items-center flex-column ">
 <h1>MANGIARE</h1>
 

@@ -42,20 +42,10 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Volver <span class="sr-only">(current)</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="mostrarmeseros.php">Mostrar</a>
+                <a class="nav-link" href="mostrarmesa.php">MESAS> <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="buscarr.php">Buscar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="formulario.html">Meseros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Meseros</a>
+                <a class="nav-link" href="formulariomesa.html">Registrar</a>
               </li>
 
             </ul>
