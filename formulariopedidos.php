@@ -1,3 +1,13 @@
+<?php
+include 'conexion.php';
+$query="SELECT  identificacion,nombre FROM meseros";
+$consulta=mysqli_query($conect, $query);
+$queryy="SELECT id,nombre FROM productos";
+$consultaa=mysqli_query($conect, $queryy);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +67,22 @@
         <div class="card-body">
             <form action="regalpedido.php" method="post">
                 <div class="form-group">
+                <select name="meseros" id="productos" class="form-control">
+                    <option selected>seleccione meseros(a)</option>
+                <?php
+                    while ($v=mysqli_fetch_array($consulta)) {
+                        echo "<option value=".$v[0].">".$v[1]."</option>";
+                    }   
+                ?>
+                </select><br>
+                <select name="productos" id="productos" class="form-control">
+                <option selected>seleccione productos</option>
+                <?php
+                    while ($s=mysqli_fetch_array($consultaa)) {
+                        echo "<option value=".$s[0].">".$s[1]."</option>";
+                    }   
+                ?>
+                </select><br>
                     <label for="exampleDropdownFormEmail2">nombre cliente</label>
                     <input type="text" class="form-control" id="exampleDropdownFormEmail2"  name="cliente">
                 </div>
@@ -72,21 +98,9 @@
                     <label for="exampleDropdownFormPassword2">cantidad de podructos</label>
                     <input  class="form-control" id="exampleDropdownFormPassword2"  type="number"  name="cant">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="exampleDropdownFormPassword2">total</label>
-                    <input  class="form-control" id="exampleDropdownFormPassword2"  type="number"  name="total">
-                </div> -->
                 <div class="form-group">
                     <label for="exampleDropdownFormPassword2">estado</label>
                     <input  class="form-control" id="exampleDropdownFormPassword2"  type="text"  name="estado">
-                </div>
-                <div class="form-group">
-                    <label for="exampleDropdownFormPassword2">identificacion de mesa</label>
-                    <input  class="form-control" id="exampleDropdownFormPassword2" placeholder="Codigo" type="number"  name="mesa">
-                </div>
-                <div class="form-group">
-                    <label for="exampleDropdownFormPassword2">identificacion mesero</label>
-                    <input  class="form-control" id="exampleDropdownFormPassword2" placeholder="Codigo" type="number"  name="mesero">
                 </div>
                 <CEnter><input type="submit" class="btn btn-success btn-lg" name="btn"><br><br></CEnter>
                 <CEnter><a href="index.html">VOLVER</a><br><br></CEnter>
