@@ -184,3 +184,22 @@ header{
     padding: 20px;
     text-align: center;
 }
+.btn-add-cart{
+    width: 214px;
+    height: 33px;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 6px;
+}
+.n{
+    width: 200px;
+    height: 34px;
+}
+select{
+    height: 34px;
+}
+.buscar{
+    height: 34px;
+    width: 59px;
+}

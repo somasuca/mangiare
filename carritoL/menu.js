@@ -20,19 +20,17 @@ const valorTotal = document.querySelector('.total-pagar')
 const countProducts= document.querySelector('#contador-productos')
 
 
-
-
-productList.addEventListener('click',  e =>{
-    if(e.target.classList.contains('btn-add-cart')){
-     const product = e.target.parentElement
-
-     const infoProduct = {
-        quantity: 1,
+function AgregarCarrito(event){
+    console.log("Hola");
+    const product = event.target.parentElement
+    const precio=document.getElementById('precio')
+    const infoProduct={
+        quantity:1,
         title:product.querySelector('h2').textContent,
-        price: product.querySelector('p').textContent,
-     }
+        price:product.querySelector('p').textContent,
 
-     const exits = allProducts.some(product => product.title === infoProduct.title)
+    }
+    const exits = allProducts.some(product => product.title === infoProduct.title)
 
      if(exits){
         const products = allProducts.map(product => {
@@ -50,13 +48,47 @@ productList.addEventListener('click',  e =>{
     
 
 
-     showHTML();
-    }
+      showHTML();
+    console.log(infoProduct)
+}
 
-console.log(allProducts)
+// productList.addEventListener('click',  e =>{
+//     if(e.target.classList.contains('btn-add-cart')){
+//      const product = e.target.parentElement
+//      console.log("Hola"+product)
 
 
-})
+//      const infoProduct = {
+//         quantity: 1,
+//         title:product.querySelector('h2').textContent,
+//         price: product.querySelector('p').textContent,
+//      }
+
+//      const exits = allProducts.some(product => product.title === infoProduct.title)
+
+//      if(exits){
+//         const products = allProducts.map(product => {
+//             if(product.title === infoProduct.title){
+//             product.quantity++;
+//             return product;
+//         } else {
+//             return product;
+//         }
+//     });
+//         allProducts=[...products];
+//      }else{
+//         allProducts =[...allProducts, infoProduct];
+//      }
+    
+
+
+//      showHTML();
+//     }
+
+// console.log(allProducts)
+
+
+// })
 
 rowProduct.addEventListener('click', (e) =>{
     if (e.target.classList.contains('icon-close')) {

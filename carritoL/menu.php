@@ -16,14 +16,70 @@ include '../conexion.php';
         img{
             width:100px ;
         }
-    </style>
+        .btn-add-cart{
+    width: 214px;
+    height: 33px;
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 6px;
+}
+.n{
+    width: 200px;
+    height: 34px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.buscar{
+    height: 34px;
+    width:59px;
+    border-radius: 7px;
+
+}
+.button-elevated {
+  background: #1c1c1cc7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.button-elevated:hover {
+  background-color: #9d9797c7;
+}
+.custom-select {
+  appearance: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  width: 100px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-select:hover {
+  border-color: #999;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+
+</style>
 
 
 </head>
 <body>
     <header>
         <h1>Menu</h1>
-
         <div class="container-icon">
             <div class="container-cart-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
@@ -59,12 +115,13 @@ include '../conexion.php';
         </div>
         </header><br>
         <FORM Action="" Method="POST">
-            <SELECT name="campo">
-                <option value="referencia">Referencia</option>
-                <option Value="nombre">nombre</option>
+            <SELECT name="campo" class="custom-select">
+                <option Value="nombre">nombre</option>                
+                <option value="precio">precio</option>
+                <option value="tama">tamaño</option>
             </SELECT>
-            <input type="" name="dato">
-            <input type="submit" name="Enviar" Value="Buscar">
+            <input type="" name="dato" class="n">
+            <input type="submit" name="Enviar" Value="Buscar" class="button-elevated">
         </FORM><br><br>
  <?php
 if(isset($_POST['Enviar']) and !($_POST['dato']=="") ){
@@ -97,8 +154,11 @@ while($vec=mysqli_fetch_array($resultado)){ ?>
         <img src="<?php echo $vec ['imagen']; ?>" width="90%" alt="producto" >
         </figure>
         <h2><?php echo $vec['nombre']; ?></h2>
-        <p><?php echo "$ ".$vec ['valor']; ?></p>
-        <button class="btn-add-cart">Añadir al carrito</button>
+        <p id="precio"><?php echo "$ ".$vec ['precio']; ?></p>
+        <p><?php echo " ".$vec ['tipo']; ?></p>
+        <p><?php echo " ".$vec ['tama']; ?></p>
+        <p><?php echo " ".$vec ['descripcion']; ?></p><br>
+        <button class="btn-add-cart" onclick=AgregarCarrito(event)>Añadir al carrito</button>
     </center></div>
 </div>
 </td>
