@@ -35,7 +35,6 @@ include '../conexion.php';
     height: 34px;
     width:59px;
     border-radius: 7px;
-
 }
 .button-elevated {
   background: #1c1c1cc7;

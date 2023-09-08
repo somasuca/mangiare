@@ -52,43 +52,43 @@ function AgregarCarrito(event){
     console.log(infoProduct)
 }
 
-// productList.addEventListener('click',  e =>{
-//     if(e.target.classList.contains('btn-add-cart')){
-//      const product = e.target.parentElement
-//      console.log("Hola"+product)
+productList.addEventListener('click',  e =>{
+    if(e.target.classList.contains('btn-add-cart')){
+     const product = e.target.parentElement
+     console.log(product)
 
 
-//      const infoProduct = {
-//         quantity: 1,
-//         title:product.querySelector('h2').textContent,
-//         price: product.querySelector('p').textContent,
-//      }
+     const infoProduct = {
+        quantity: 1,
+        title:product.querySelector('h2').textContent,
+        price: product.querySelector('p').textContent,
+     }
 
-//      const exits = allProducts.some(product => product.title === infoProduct.title)
+     const exits = allProducts.some(product => product.title === infoProduct.title)
 
-//      if(exits){
-//         const products = allProducts.map(product => {
-//             if(product.title === infoProduct.title){
-//             product.quantity++;
-//             return product;
-//         } else {
-//             return product;
-//         }
-//     });
-//         allProducts=[...products];
-//      }else{
-//         allProducts =[...allProducts, infoProduct];
-//      }
+     if(exits){
+        const products = allProducts.map(product => {
+            if(product.title === infoProduct.title){
+            product.quantity++;
+            return product;
+        } else {
+            return product;
+        }
+    });
+        allProducts=[...products];
+     }else{
+        allProducts =[...allProducts, infoProduct];
+     }
     
 
 
-//      showHTML();
-//     }
+     showHTML();
+    }
 
-// console.log(allProducts)
+console.log(allProducts)
 
 
-// })
+})
 
 rowProduct.addEventListener('click', (e) =>{
     if (e.target.classList.contains('icon-close')) {
@@ -125,9 +125,10 @@ let totalOFProducts = 0;
         containerProduct.innerHTML= `
             <div class="info-cart-product">
                 <span class="cantidad-producto-carrito">${product.quantity}</span>
-                <p class="titulo-producto-carrito">${product.title}</p>
-                <span class="precio-producto-carrito">${product.price} </span>
-            </div>
+                <p class="titulo-producto-carrito">${product.title}</p>    
+                <span class="precio-producto-carrito">${product.price}</span>
+                </div>
+            
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -140,8 +141,10 @@ let totalOFProducts = 0;
         console.log(total);
     }); 
 
-    valorTotal.innerText = `$${total}`;
+    valorTotal.innerHTML = `$${total} `;
+    const boton = `<button onclick="window.location.href='recibir.php?w1=${product.quantity}&w2=${product.title}&w3=${product.price}'">Realizar</button>`;
     countProducts.innerText = totalOFProducts;
+
 
 }
 
