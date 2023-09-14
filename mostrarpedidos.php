@@ -38,7 +38,7 @@ $resultado =mysqli_query($conect, $consult);
 </head>
 <body>
 <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="index.html">
           <img src="https://cdn-icons-png.flaticon.com/512/1980/1980788.png" alt="" class="m">   MANGIARE</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,17 +46,11 @@ $resultado =mysqli_query($conect, $consult);
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Volver <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="mostrarpedidos.php">Pedidos> <span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="mostrarmeseros.php">Mostrar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buscarr.php">Buscar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="formulario.html">Meseros</a>
+                <a class="nav-link" href="formulariopedidos.html">Registrar</a>
               </li>
 
             </ul>
